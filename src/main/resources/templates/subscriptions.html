@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+</html>
+
+<head>
+    <title>Панель подписок</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+
+<body>
+    <header class="header">
+        <form th:action="@{/logout}" method="post">
+            <button type="submit">Выйти</button>
+
+            <div sec:authorize="hasRole('META_USER')">
+                <a href="/users"><button type="button">Добавить admin пользователя</button></a>
+            </div>
+        </form>
+    </header>
+
+
+    <main class="container">
+        <div class="input_box">
+            <form method="get">
+                <input name="searchId" placeholder="Поиск по ID...">
+                <button type="submit">Поиск</button>
+            </form>
+            <form th:action="@{/subscriptions}" method="post">
+                <input type="text" name="id" placeholder="Введите ID" required>
+                <button type="submit">Создать подписку</button>
+            </form>
+        </div>
+
+        <h2>Панель Подписок</h2>
+
+        <div id="copy-notification"
+            style="display:none; position:fixed; top:20px; right:20px; background:#4caf50; color:white; padding:10px 20px; border-radius:5px; z-index:1000;">
+            Ключ скопирован в буфер обмена
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ключ</th>
+                    <th>Окончание</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="sub : ${subscriptions}">
+                    <td th:text="${sub.id}"></td>
+                    <td class="token-cell" th:text="${sub.shortKey}" th:attr="data-full-token=${sub.fullKey}">
+                    </td>
+                    <td th:text="${sub.expirationDate}"></td>
+                    <td>
+                        <form th:action="@{/subscriptions/delete/{id}(id=${sub.id})}" method="post">
+                            <button>Удалить</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const notification = document.getElementById('copy-notification');
+        document.querySelectorAll('.token-cell').forEach(cell => {
+            cell.addEventListener('click', () => {
+                const fullToken = cell.dataset.fullToken;
+
+                navigator.clipboard.writeText(fullToken).then(() => {
+                    cell.classList.add("copied");
+                    // Показываем уведомление
+                    notification.style.display = 'block';
+                    setTimeout(() => {
+                        cell.classList.remove("copied");
+                        notification.style.display = 'none';
+                    }, 2000);
+                });
+            });
+        });
+    });
+</script>
+
+</html>
