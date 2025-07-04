@@ -1,0 +1,16 @@
+com/owpk/subscription/jpa/Subscription.class
+com/owpk/subscription/JwtService$JwtEntry.class
+com/owpk/subscription/SubscriptionPanelApplication.class
+com/owpk/subscription/controller/rest/SubscriptionRestController.class
+com/owpk/subscription/config/security/SecurityConfig.class
+com/owpk/subscription/controller/SubscriptionController$SubscriptionView.class
+com/owpk/subscription/jpa/AppUser.class
+com/owpk/subscription/controller/UserManagementController.class
+com/owpk/subscription/jpa/UserRepository.class
+com/owpk/subscription/JwtService.class
+com/owpk/subscription/jpa/SubscriptionRepository.class
+com/owpk/subscription/SubscriptionService.class
+com/owpk/subscription/config/AppBeanConfig.class
+com/owpk/subscription/config/security/CustomUserDetailsService.class
+com/owpk/subscription/controller/SubscriptionController.class
+com/owpk/subscription/controller/LoginController.class

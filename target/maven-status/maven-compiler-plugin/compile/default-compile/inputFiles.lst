@@ -1,0 +1,14 @@
+/Users/slavavorobev/gh/subscription-panel/src/main/java/com/owpk/subscription/JwtService.java
+/Users/slavavorobev/gh/subscription-panel/src/main/java/com/owpk/subscription/SubscriptionPanelApplication.java
+/Users/slavavorobev/gh/subscription-panel/src/main/java/com/owpk/subscription/SubscriptionService.java
+/Users/slavavorobev/gh/subscription-panel/src/main/java/com/owpk/subscription/config/AppBeanConfig.java
+/Users/slavavorobev/gh/subscription-panel/src/main/java/com/owpk/subscription/config/security/CustomUserDetailsService.java
+/Users/slavavorobev/gh/subscription-panel/src/main/java/com/owpk/subscription/config/security/SecurityConfig.java
+/Users/slavavorobev/gh/subscription-panel/src/main/java/com/owpk/subscription/controller/LoginController.java
+/Users/slavavorobev/gh/subscription-panel/src/main/java/com/owpk/subscription/controller/SubscriptionController.java
+/Users/slavavorobev/gh/subscription-panel/src/main/java/com/owpk/subscription/controller/UserManagementController.java
+/Users/slavavorobev/gh/subscription-panel/src/main/java/com/owpk/subscription/controller/rest/SubscriptionRestController.java
+/Users/slavavorobev/gh/subscription-panel/src/main/java/com/owpk/subscription/jpa/AppUser.java
+/Users/slavavorobev/gh/subscription-panel/src/main/java/com/owpk/subscription/jpa/Subscription.java
+/Users/slavavorobev/gh/subscription-panel/src/main/java/com/owpk/subscription/jpa/SubscriptionRepository.java
+/Users/slavavorobev/gh/subscription-panel/src/main/java/com/owpk/subscription/jpa/UserRepository.java
